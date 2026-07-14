@@ -18,7 +18,7 @@ import wtf.remix.util.player.ItemUtil;
 
 /**
  * @author kevin
- * @since 2026/7/13
+ * @since 2026/7/14
  */
 
 public class AutoGapple extends Module {
