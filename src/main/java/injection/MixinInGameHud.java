@@ -1,9 +1,9 @@
 package injection;
 
-import cn.remix.event.impl.Render2DEvent;
-import cn.remix.module.impl.render.HUD;
-import cn.remix.util.IMinecraft;
-import cn.remix.util.misc.TimerUtil;
+import wtf.remix.event.impl.Render2DEvent;
+import wtf.remix.module.impl.render.HUD;
+import wtf.remix.util.IMinecraft;
+import wtf.remix.util.misc.TimerUtil;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.gui.render.state.GuiRenderState;
@@ -35,6 +35,7 @@ public abstract class MixinInGameHud implements IMinecraft {
         }
 
         cachedHudState.forEachSimpleElement(context.state::addSimpleElement, GuiRenderState.LayerFilter.ALL);
+        cachedHudState.forEachItemElement(context.state::addItem);
     }
 
     @Inject(method = "renderStatusEffectOverlay", at = @At("HEAD"), cancellable = true)

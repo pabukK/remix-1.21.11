@@ -1,9 +1,9 @@
 package injection;
 
-import cn.remix.module.impl.combat.Aura;
-import cn.remix.module.impl.render.Animation;
-import cn.remix.util.IMinecraft;
-import cn.remix.util.player.ItemSpoofUtil;
+import wtf.remix.module.impl.combat.KillAura;
+import wtf.remix.module.impl.render.Animation;
+import wtf.remix.util.IMinecraft;
+import wtf.remix.util.player.ItemSpoofUtil;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.item.HeldItemRenderer;
@@ -73,7 +73,7 @@ public abstract class MixinHeldItemRenderer implements IMinecraft {
     @Inject(method = "renderFirstPersonItem(Lnet/minecraft/client/network/AbstractClientPlayerEntity;FFLnet/minecraft/util/Hand;FLnet/minecraft/item/ItemStack;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/command/OrderedRenderCommandQueue;I)V", at = @At("HEAD"), cancellable = true)
     private void renderFirstPersonItem(AbstractClientPlayerEntity player, float tickDelta, float pitch, Hand hand, float swingProgress, ItemStack item, float equipProgress, MatrixStack matrices, OrderedRenderCommandQueue orderedRenderCommandQueue, int light, CallbackInfo ci) {
         Animation animation = instance.getModuleManager().getModule(Animation.class);
-        Aura aura = instance.getModuleManager().getModule(Aura.class);
+        KillAura killAura = instance.getModuleManager().getModule(KillAura.class);
 
         if (!animation.isEnabled()) {
             return;
@@ -154,7 +154,7 @@ public abstract class MixinHeldItemRenderer implements IMinecraft {
                             this.applyEquipOffset(matrices, arm, equipProgress);
                             break;
                         case BLOCK:
-                            if (item.isIn(ItemTags.SWORDS) && (this.offHand.isEmpty() || aura.isRenderBlock())) {
+                            if (item.isIn(ItemTags.SWORDS) && (this.offHand.isEmpty() || killAura.isRenderBlock())) {
                                 this.blockAnimation(swingProgress, equipProgress, matrices, arm, l, animation);
                             } else {
                                 this.applyEquipOffset(matrices, arm, equipProgress);
@@ -223,7 +223,7 @@ public abstract class MixinHeldItemRenderer implements IMinecraft {
                     matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float)l * -85.0F));
                 } else {
                     boolean isSwordBlock = item.isIn(ItemTags.SWORDS) && mc.options.useKey.isPressed() && this.offHand.isEmpty();
-                    if (isSwordBlock || (aura.isRenderBlock() && hand == Hand.MAIN_HAND && item.isIn(ItemTags.SWORDS))) {
+                    if (isSwordBlock || (killAura.isRenderBlock() && hand == Hand.MAIN_HAND && item.isIn(ItemTags.SWORDS))) {
                         this.blockAnimation(swingProgress, equipProgress, matrices, arm, l, animation);
                     } else {
                         this.swingArm(swingProgress, equipProgress, matrices, l, arm);

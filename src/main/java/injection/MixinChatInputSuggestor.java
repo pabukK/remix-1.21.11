@@ -1,6 +1,6 @@
 package injection;
 
-import cn.remix.util.IMinecraft;
+import wtf.remix.util.IMinecraft;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import net.minecraft.client.gui.screen.ChatInputSuggestor;

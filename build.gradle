@@ -18,6 +18,11 @@ repositories {
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
+    mavenCentral()
+    maven { name = "Jitpack"; url = "https://jitpack.io" }
+
+    maven { name = "ViaVersion"; url = "https://repo.viaversion.com" }
+    maven { name = "Lenni0451"; url = "https://maven.lenni0451.net/snapshots" }
 }
 
 dependencies {
@@ -27,11 +32,15 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    implementation "io.netty:netty-handler-proxy:${"4.1.111.Final"}"
-    include "io.netty:netty-handler-proxy:${"4.1.111.Final"}"
-    implementation "io.netty:netty-codec-socks:${"4.1.111.Final"}"
-    include "io.netty:netty-codec-socks:${"4.1.111.Final"}"
+    implementation "io.netty:netty-handler-proxy:${project.netty_version}"
+    include "io.netty:netty-handler-proxy:${project.netty_version}"
+    implementation "io.netty:netty-codec-socks:${project.netty_version}"
+    include "io.netty:netty-codec-socks:${project.netty_version}"
 
+    compileOnly "com.viaversion:viafabricplus-api:${project.viafabricplus_version}"
+
+    // 如果不加mod...
+    // runtimeOnly "com.viaversion:viafabricplus:${project.viafabricplus_version}"
 }
 
 processResources {

@@ -1,7 +1,7 @@
 package injection;
 
-import cn.remix.event.impl.MoveInputEvent;
-import cn.remix.util.IMinecraft;
+import wtf.remix.event.impl.MoveInputEvent;
+import wtf.remix.util.IMinecraft;
 import net.minecraft.client.input.Input;
 import net.minecraft.client.input.KeyboardInput;
 import net.minecraft.util.PlayerInput;

@@ -1,7 +1,7 @@
 package injection;
 
-import cn.remix.module.impl.render.ItemPhysics;
-import cn.remix.util.IMinecraft;
+import wtf.remix.module.impl.render.ItemPhysics;
+import wtf.remix.util.IMinecraft;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.entity.EntityRenderer;

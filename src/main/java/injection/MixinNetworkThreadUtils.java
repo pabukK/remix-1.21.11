@@ -1,7 +1,7 @@
 package injection;
 
-import cn.remix.event.impl.PacketEvent;
-import cn.remix.util.IMinecraft;
+import wtf.remix.event.impl.PacketEvent;
+import wtf.remix.util.IMinecraft;
 import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.OffThreadException;
 import net.minecraft.network.PacketApplyBatcher;

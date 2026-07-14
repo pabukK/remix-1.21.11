@@ -1,9 +1,9 @@
 package injection;
 
-import cn.remix.event.impl.LookEvent;
-import cn.remix.event.impl.StrafeEvent;
-import cn.remix.util.IMinecraft;
-import cn.remix.util.player.MovementUtil;
+import wtf.remix.event.impl.LookEvent;
+import wtf.remix.event.impl.StrafeEvent;
+import wtf.remix.util.IMinecraft;
+import wtf.remix.util.player.MovementUtil;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;

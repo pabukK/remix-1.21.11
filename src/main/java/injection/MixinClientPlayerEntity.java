@@ -1,8 +1,8 @@
 package injection;
 
-import cn.remix.Client;
-import cn.remix.event.impl.*;
-import cn.remix.util.IMinecraft;
+import wtf.remix.Client;
+import wtf.remix.event.impl.*;
+import wtf.remix.util.IMinecraft;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;

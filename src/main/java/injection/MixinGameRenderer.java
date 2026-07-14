@@ -1,8 +1,8 @@
 package injection;
 
-import cn.remix.event.impl.Render3DEvent;
-import cn.remix.module.impl.render.NoHurtCam;
-import cn.remix.util.IMinecraft;
+import wtf.remix.event.impl.Render3DEvent;
+import wtf.remix.module.impl.render.NoHurtCam;
+import wtf.remix.util.IMinecraft;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.render.*;

@@ -1,10 +1,10 @@
 package injection;
 
-import cn.remix.Client;
-import cn.remix.event.impl.TickEvent;
-import cn.remix.event.impl.WorldEvent;
-import cn.remix.util.IMinecraft;
-import cn.remix.util.Util;
+import wtf.remix.Client;
+import wtf.remix.event.impl.TickEvent;
+import wtf.remix.event.impl.WorldEvent;
+import wtf.remix.util.IMinecraft;
+import wtf.remix.util.Util;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.option.InactivityFpsLimiter;

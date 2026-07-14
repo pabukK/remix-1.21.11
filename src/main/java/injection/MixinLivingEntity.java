@@ -1,10 +1,10 @@
 package injection;
 
-import cn.remix.event.impl.JumpEvent;
-import cn.remix.event.impl.MoveMathEvent;
-import cn.remix.event.impl.RenderRotationEvent;
-import cn.remix.module.impl.render.Animation;
-import cn.remix.util.IMinecraft;
+import wtf.remix.event.impl.JumpEvent;
+import wtf.remix.event.impl.MoveMathEvent;
+import wtf.remix.event.impl.RenderRotationEvent;
+import wtf.remix.module.impl.render.Animation;
+import wtf.remix.util.IMinecraft;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;

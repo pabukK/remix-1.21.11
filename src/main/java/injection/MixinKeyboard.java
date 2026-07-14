@@ -1,7 +1,7 @@
 package injection;
 
-import cn.remix.event.impl.KeyInputEvent;
-import cn.remix.util.IMinecraft;
+import wtf.remix.event.impl.KeyInputEvent;
+import wtf.remix.util.IMinecraft;
 import net.minecraft.client.Keyboard;
 import net.minecraft.client.input.KeyInput;
 import org.spongepowered.asm.mixin.Mixin;

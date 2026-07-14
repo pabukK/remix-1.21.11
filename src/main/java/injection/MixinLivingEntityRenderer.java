@@ -1,7 +1,7 @@
 package injection;
 
-import cn.remix.event.impl.RenderRotationEvent;
-import cn.remix.util.IMinecraft;
+import wtf.remix.event.impl.RenderRotationEvent;
+import wtf.remix.util.IMinecraft;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
 import net.minecraft.client.render.entity.state.LivingEntityRenderState;
 import net.minecraft.entity.LivingEntity;
