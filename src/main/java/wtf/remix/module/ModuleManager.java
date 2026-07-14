@@ -29,7 +29,7 @@ public class ModuleManager implements IMinecraft {
         instance.getEventManager().register(this);
 
         addModules(
-                new Gapple(),
+                new AutoGapple(),
                 new HUD(),
                 new ClickGui(),
                 new Scaffold(),
