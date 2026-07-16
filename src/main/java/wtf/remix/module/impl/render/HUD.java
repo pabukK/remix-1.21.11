@@ -89,7 +89,7 @@ public class HUD extends Module {
 
         if (hudOptionsProperty.isEnabled("Display")) {
             Disabler disabler = getModule(Disabler.class);
-            if (disabler.isEnabled()) {
+            if (disabler.isEnabled() && disabler.getMode().is("Sentinel")) {
                 String text;
 
                 if (disabler.isWaiting()) {

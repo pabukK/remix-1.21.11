@@ -44,6 +44,7 @@ public class ModuleManager implements IMinecraft {
                 new Criticals(),
                 new NoSlowDown(),
                 new ModuleList(),
+                new HighJump(),
                 new Speed(),
                 new Fly(),
                 new Velocity(),

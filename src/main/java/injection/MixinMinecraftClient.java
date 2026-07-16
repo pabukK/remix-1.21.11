@@ -3,6 +3,7 @@ package injection;
 import wtf.remix.Client;
 import wtf.remix.event.impl.TickEvent;
 import wtf.remix.event.impl.WorldEvent;
+import wtf.remix.module.impl.exploits.Disabler;
 import wtf.remix.util.IMinecraft;
 import wtf.remix.util.Util;
 import net.minecraft.client.MinecraftClient;
@@ -54,6 +55,14 @@ public abstract class MixinMinecraftClient implements IMinecraft {
         }
 
         instance.getEventManager().call(new TickEvent());
+    }
+
+    @Inject(method = "tick", at = @At("TAIL"))
+    private void tickPost(CallbackInfo ci) {
+        Disabler module = Client.instance.getModuleManager().getModule(Disabler.class);
+        if (module != null) {
+            module.releasePost();
+        }
     }
 
     @Inject(method = "setWorld(Lnet/minecraft/client/world/ClientWorld;)V", at = @At("HEAD"))

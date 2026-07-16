@@ -2,6 +2,7 @@ package injection;
 
 import wtf.remix.Client;
 import wtf.remix.event.impl.*;
+import wtf.remix.module.impl.exploits.Disabler;
 import wtf.remix.util.IMinecraft;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.MinecraftClient;
@@ -153,6 +154,11 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
 
             event.setPost();
             Client.instance.getEventManager().call(event);
+        }
+
+        Disabler module = Client.instance.getModuleManager().getModule(Disabler.class);
+        if (module != null) {
+            module.releasePost();
         }
 
         ci.cancel();
