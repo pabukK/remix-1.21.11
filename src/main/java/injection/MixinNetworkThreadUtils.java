@@ -62,7 +62,9 @@ public class MixinNetworkThreadUtils implements IMinecraft {
         if (!batcher.isOnThread()) {
             Disabler module = instance.getModuleManager().getModule(Disabler.class);
 
-            if (module.isEnabled() && module.getGrimPost() && module.grimPostDelay(packet) && listener == MinecraftClient.getInstance().getNetworkHandler()) {
+            if (module.isEnabled() && module.getGrimPost()
+                    && module.grimPostDelay(packet)
+                    && listener == MinecraftClient.getInstance().getNetworkHandler()) {
                 // Grim Post：延迟到 releasePost() 处理，不入 batcher
                 module.getPostPackets().add((Packet<ClientPlayPacketListener>) packet);
                 throw OffThreadException.INSTANCE;  // 必须 throw 以中断网络线程
